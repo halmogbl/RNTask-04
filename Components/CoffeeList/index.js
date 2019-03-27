@@ -16,10 +16,11 @@ import {
   Left,
   Content,
   Icon,
-  Footer,
   Container,
   Body
 } from "native-base";
+
+import FooterComp from "../Footer/footer";
 
 // Style
 import styles from "./styles";
@@ -106,26 +107,7 @@ class CoffeeList extends Component {
         <Content>
           <List>{ListItems}</List>
         </Content>
-        <Footer>
-          <Button
-            success
-            onPress={
-              this.props.user
-                ? () => this.props.logout()
-                : () => this.props.navigation.navigate("Login")
-            }
-          >
-            <Icon
-              name={this.props.user ? "logout" : "login"}
-              type="MaterialCommunityIcons"
-            />
-          </Button>
-          {this.props.user ? (
-            <Text>{this.props.user.username.toUpperCase()}</Text>
-          ) : (
-            <Text>Login</Text>
-          )}
-        </Footer>
+        <FooterComp navigation={this.props.navigation} />
       </Container>
     );
   }

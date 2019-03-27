@@ -6,16 +6,18 @@ import CoffeeList from "../CoffeeList";
 import CoffeeDetail from "../CoffeeDetail";
 import CoffeeCart from "../CoffeeCart";
 import Login from "../Login";
+import Start from "../registerForPushNotifications";
 
 export default createStackNavigator(
   {
     CoffeeList: CoffeeList,
     CoffeeDetail: CoffeeDetail,
     CoffeeCart: CoffeeCart,
-    Login: Login
+    Login: Login,
+    Start: Start
   },
   {
-    initialRouteName: "CoffeeList",
+    initialRouteName: "Start",
     navigationOptions: {
       headerTintColor: "white",
       headerStyle: {
